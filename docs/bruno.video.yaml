@@ -1,0 +1,49 @@
+openapi: 3.0.0
+info:
+  title: bruno.video
+  version: 1.0.0
+paths:
+  /video/process:
+    post:
+      summary: Untitled
+      operationId: c_users_beardo_onedrive_documents_bruno_nestjs-bullmq-redis_untitled_yml
+      description: ''
+      tags:
+        - ''
+      responses:
+        '200':
+          description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/untitled'
+      servers:
+        - url: http://localhost:3000
+servers: []
+components:
+  schemas:
+    untitled:
+      type: object
+      properties:
+        fileName:
+          type: string
+        fileType:
+          type: string
+        targetFormats:
+          type: array
+          items:
+            type: string
+      example:
+        fileName: best-video
+        fileType: mp4
+        targetFormats:
+          - 360p
+          - 480p
+          - 720p
+  requestBodies:
+    untitled:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/untitled'
+      description: ''
+      required: true
+  securitySchemes: {}
